@@ -9,8 +9,12 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
+    let message = event.target[0].value;
+    // MessagesView.renderMessage(message); //.bind(this);
+    //console.log('FormView', message);
+    MessagesView.initialize(message);
     
-    console.log('click!');
+    //console.log('click!');
   },
 
   setStatus: function(active) {
