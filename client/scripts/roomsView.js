@@ -3,10 +3,16 @@ var RoomsView = {
   $button: $('#rooms button'),
   $select: $('#rooms select'),
 
-  initialize: function() {
+  initialize: function () {
   },
 
-  renderRoom: function() {
+  renderRoom: function () {
+  },
+
+  render: function () {
+
   }
+
+
 
 };
