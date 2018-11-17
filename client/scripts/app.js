@@ -21,7 +21,7 @@ var App = {
     Parse.readAll((data) => {
       // console.log(data.results);
       //console.log(data.results.length)
-      for (let i = 0; i < data.results.length; i++) {
+      for (let i = data.results.length - 1; i >= 0; i--) {
         MessagesView.initialize(data.results[i]);
         // console.log('These are our results:', data.results[1].username);
       }
