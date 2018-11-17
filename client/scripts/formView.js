@@ -5,6 +5,7 @@ var FormView = {
   initialize: function () {
     FormView.$form.on('submit', FormView.handleSubmit);
     FormView.addRoom();
+    FormView.chooseRoom();
   },
 
   handleSubmit: function (event) {
@@ -12,10 +13,7 @@ var FormView = {
     event.preventDefault();
 
 
-    console.log(event.target[0].value);
-    //console.log(event.target[0].username)
     let username = window.location.search.slice(10);
-    //console.log(window.location.search.slice(10));
     let text = event.target[0].value;
     let roomname = 'Lobby(default)';
 
@@ -27,8 +25,6 @@ var FormView = {
     Parse.create(messageObj);
 
 
-    // MessagesView.renderMessage(message); //.bind(this);
-    //console.log('FormView', message);
     MessagesView.initialize(messageObj);
 
     //console.log('click!');
@@ -42,9 +38,19 @@ var FormView = {
   addRoom: function () {
     $('#create-room').on('submit', function (e) {
       e.preventDefault();
-      $('select').append(`<option value="${e.target[0].value}">${e.target[0].value}</option>`)
-      console.log(e.target[0].value)
+      $('select').append(`<option value="${e.target[0].value}">${e.target[0].value}</option>`);
+      if (!Rooms.roomList.includes(e.target[0].value)) {
+        Rooms.roomList.push(e.target[0].value);
+      }
+      console.log(Rooms.roomList);
+      // console.log(e.target[0].value);
       //alert('submitted');
+    });
+  },
+  chooseRoom: function () {
+    $('select').on('change', function (event) {
+
+      console.log(event.target.value);
     });
   }
 
