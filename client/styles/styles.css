@@ -1,5 +1,7 @@
 body {
-    background: #eee;
+    background: radial-gradient(rgb(55, 52, 52), #bcbecd);
+    /* background-image: -webkit-radial-gradient() */
+    /* background: #eee; */
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
@@ -16,6 +18,7 @@ body {
 }
 
 #main h1 {
+    text-align: center;
     margin-top: 0;
     font-size: 35px;
     margin-bottom: 5px;
@@ -87,4 +90,32 @@ form input[type=text] {
     color: #fff;
     background-color: #0090da;
 }
+
+#add-room-btn, .submit {
+    background-color: dodgerblue;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 4px;
+
+    /* font-size: 30px; */
+}
+
+.text {
+    font-family: cursive;
+}
+
+.roomname {
+    font-size: 12px;
+}
+
+/* .chat {
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.username {
+    max-width: 20px;
+} */
 

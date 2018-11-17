@@ -5,7 +5,11 @@ var FormView = {
   initialize: function () {
     FormView.$form.on('submit', FormView.handleSubmit);
     FormView.addRoom();
-    FormView.chooseRoom();
+    // FormView.chooseRoom();
+    this.results = FormView.chooseRoom();
+
+    console.log('INITIALIZE', this.results);
+
   },
 
   handleSubmit: function (event) {
@@ -48,10 +52,15 @@ var FormView = {
     });
   },
   chooseRoom: function () {
+    let result = '';
     $('select').on('change', function (event) {
-
+      result = event.target.value;
+      // Room that is selected
       console.log(event.target.value);
+      // return event.target.value;
+
     });
+    return result;
   }
 
 };
