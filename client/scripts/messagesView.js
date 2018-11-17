@@ -16,7 +16,8 @@ var MessagesView = {
 
   render: function (messageObj) {
     //console.log('MessagesView.render (IN): ', messageObj);
-    if (messageObj) {
+    if ((messageObj && messageObj.text && messageObj.roomname && messageObj.username) && (!messageObj.text.includes('<') && !messageObj.text.includes('<font'))) {
+
       $('#chats').prepend(_.template(`
 
        <div class="chat">
