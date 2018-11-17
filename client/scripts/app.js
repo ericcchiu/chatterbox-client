@@ -17,16 +17,18 @@ var App = {
 
   },
 
-  fetch: function (callback = () => { }) {
+  fetch: function (callback) {
     Parse.readAll((data) => {
-      for (let i = 0; i < 10; i++) {
-        MessagesView.renderMessage(data.results[i].text);
-        //console.log(data.results[0])
+      // console.log(data.results);
+      //console.log(data.results.length)
+      for (let i = 0; i < data.results.length; i++) {
+        MessagesView.initialize(data.results[i]);
+        // console.log('These are our results:', data.results[1].username);
       }
       // examine the response from the server request:
       //console.log(data.results[36].text, typeof data);
 
-      callback();
+      callback(data);
     });
   },
 
